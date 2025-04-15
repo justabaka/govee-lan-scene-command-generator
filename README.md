@@ -9,6 +9,18 @@ Clone the repository (or download the script + txt files manually) and install p
 * `git clone https://github.com/justabaka/govee-lan-scene-command-generator.git`
 * `pip install -r requirements.txt`
 
+## Usage
+```shell
+Usage: ./generate.py [-h] -s SKU [-a APPVERSION] [-l FILENAME] [-c]
+
+Options:
+  -h, --help                   Show this help message and exit
+  -s, --sku SKU                Your Govee Device SKU (Model). For example, H61F2
+  -a, --appversion APPVERSION  The desired GoveeHome app version. Default value is 9999999
+  -l, --load FILENAME          Path to a file to load the API response data (JSON) from instead of requesting it via Govee API
+  -c, --cache                  Cache the API response data (JSON) to a file
+  ```
+
 ## IoT API and DIY Scenes
 As far as the community found out, command structure may vary from model to model, so it may not work out of the box.
 The easiest way to check if the commands you've generated are valid for your device is calling the IoT API which basically dumps ready commands for you.

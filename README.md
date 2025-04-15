@@ -19,7 +19,7 @@ curl --location 'https://community-api.govee.com/os/v1/login' --header 'Content-
 ```
 Returns the following JSON: `{"message":"Login successful","status":200,"data":{"token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}`
 
-Replace __token__ with an actual token (not including quotation marks):
+Replace `__token__` with an actual token (not including quotation marks):
 ```bash
 curl --location 'https://app2.govee.com/bff-app/v1/exec-plat/home' --header 'Content-Type: application/json' --header 'appVersion: 6.6.30' --header 'Authorization: Bearer __token__'
 ```

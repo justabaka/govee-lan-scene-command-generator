@@ -11,7 +11,8 @@ Clone the repository (or download the script + txt files manually) and install p
 
 ## IoT API and DIY Scenes
 As far as the community found out, command structure may vary from model to model, so it may not work out of the box.
-The easiest way to check if the commands you've generated are valid for your device is calling the IoT API which basically dumps ready commands for you. It's also a great way of obtaining commands for your DIY scenes.
+The easiest way to check if the commands you've generated are valid for your device is calling the IoT API which basically dumps ready commands for you.
+It is also a great way of obtaining commands for your DIY scenes. All you need to do is create a Tap-to-run action that runs your DIY scene in the Govee Home app, and it will appear in the IoT API response.
 
 Get token returned by this request:
 ```bash

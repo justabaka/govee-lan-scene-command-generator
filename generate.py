@@ -22,8 +22,8 @@ arg_parser = argparse.ArgumentParser(
 
 arg_parser.add_argument('-s', '--sku', required=True, help="Your Govee Device SKU (Model). For example, H61F2.")
 arg_parser.add_argument('-a', '--appversion', required=False, default="9999999", help="The desired GoveeHome app version. Default value is 9999999.")
-arg_parser.add_argument('-l', '--load', required=False, default=None, help="Path to a file to load the API response data (JSON) from instead of requesting it via Govee API")
-arg_parser.add_argument('-c', '--cache', required=False, default=False, action='store_true', help="Cache the API response data (JSON) to a file")
+arg_parser.add_argument('-l', '--load', required=False, default=None, help="Path to a file to load the API response data (JSON) from instead of requesting it via Govee API.")
+arg_parser.add_argument('-c', '--cache', required=False, default=False, action='store_true', help="Cache the API response data (JSON) to a file. Does not do anything if --load was used.")
 args = arg_parser.parse_args()
 
 base_directory = PurePath(__file__).parent
@@ -46,7 +46,7 @@ else:
     if args.cache:
         save_file = base_directory / f"govee_{args.sku}_api_data.json"
         with open(save_file, 'w') as f:
-            json.dump(data, f)
+            json.dump(data, f, indent=4)
         print(f"Saved the API response data as {save_file}.")
 
 
@@ -104,5 +104,5 @@ del(scenes)
 
 save_file = base_directory / f"govee_{args.sku}_scenes.json"
 with open(save_file, 'w') as f:
-    json.dump(new_scenes, f)
+    json.dump(new_scenes, f, indent=4)
 print(f"Saved the final JSON data to {save_file}.")

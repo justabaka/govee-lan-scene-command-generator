@@ -13,12 +13,14 @@ Clone the repository (or download the script + txt files manually) and install p
 As far as the community found out, command structure may vary from model to model, so it may not work out of the box.
 The easiest way to check if the commands you've generated are valid for your device is calling the IoT API which basically dumps ready commands for you. It's also a great way of obtaining commands for your DIY scenes.
 
+Get token returned by this request:
 ```bash
-# Get token returned by this request
 curl --location 'https://community-api.govee.com/os/v1/login' --header 'Content-Type: application/json' --data '{"email": "email", "password": "password"}'
-# Returns the following JSON: {"message":"Login successful","status":200,"data":{"token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}
+```
+Returns the following JSON: `{"message":"Login successful","status":200,"data":{"token":"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"}`
 
-# Replace __token__ with an actual token (not including quotation marks)
+Replace __token__ with an actual token (not including quotation marks):
+```bash
 curl --location 'https://app2.govee.com/bff-app/v1/exec-plat/home' --header 'Content-Type: application/json' --header 'appVersion: 6.6.30' --header 'Authorization: Bearer __token__'
 ```
 

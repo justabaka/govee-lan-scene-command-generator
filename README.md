@@ -50,12 +50,12 @@ COMMAND_PORT = 4003
 
 command = { "msg": { "cmd": "ptReal", "data": { "command": ["owABCQIEGgAAAAECAeVqAcgUCu0=", "owEA/TIB////AwCAAAAAACMAAjE=", "owIHAwAB/wUAoBQUAeYKBP///+g=", "owOFzv6m//8I/vARAcgSAeABI7w=", "owQAAgcEAAH/AAPMFBQB5goE/4E=", "owX//1/X/6b//y3+4AEByAIB4G8=", "owYBHQACBQMAAf8AA9gUFAHmCnU=", "owcCZdX/Lf7gAQHIAgHgAgAAAPM=", "o/8AAAAAAAAAAAAAAAAAAAAAAFw=", "MwUEDi8AAAAAAAAAAAAAAAAAABM="] } } }
 
-socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-socket.bind((LOCAL_IP_ADDRESS, LISTEN_PORT))
+s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+s.bind((LOCAL_IP_ADDRESS, LISTEN_PORT))
 
-socket.sendto(bytes(json.dumps(command), "utf-8"), (CONTROLLER_IP_ADDRESS, COMMAND_PORT))
-socket.close()
+s.sendto(bytes(json.dumps(command), "utf-8"), (CONTROLLER_IP_ADDRESS, COMMAND_PORT))
+s.close()
 ```
 
 ## References

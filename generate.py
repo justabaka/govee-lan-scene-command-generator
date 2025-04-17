@@ -52,7 +52,8 @@ else:
 
 # Extract only scenes from received data
 scenes = [scene for category in data['data']['categories'] for scene in category['scenes']]
-print(f"Extracted {len(scenes)} scenes.")
+extracted_scene_count = len(scenes)
+print(f"Extracted {extracted_scene_count} scenes.")
 del(data)
 
 new_scenes = {}
@@ -99,6 +100,17 @@ for scene in scenes:
         'scene_code': scene_code,
         'command': subcommands,
     }
+
+converted_scene_count = len(new_scenes)
+print(f"Converted {converted_scene_count}/{extracted_scene_count} scenes.")
+if converted_scene_count != extracted_scene_count:
+    print(f"\nWARNING: Number of converted scenes does not match the number of extracted scenes!")
+    scene_names = sorted([scene["sceneName"] for scene in scenes])
+    dupes = [x for n, x in enumerate(scene_names) if x in scene_names[:n]]
+    if dupes:
+        print(f"WARNING: Found duplicate scenes {dupes}. Seems like Govee API sends its regards.\n")
+    else:
+        print(f"WARNING: Cannot find a valid reason for this. Please inspect the JSONs and file a bug report at https://github.com/justabaka/govee-lan-scene-command-generator/issues/new\n")
 
 del(scenes)
 

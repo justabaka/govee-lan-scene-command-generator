@@ -2,8 +2,10 @@
 
 import argparse
 import base64
+import itertools
 import json
 import os
+import re
 import requests
 from pathlib import PurePath
 
@@ -14,6 +16,8 @@ def calculate_checksum(command: str = b''):
         checksum ^= command[i]
     return checksum.to_bytes()
 
+control_chars = ''.join(map(chr, itertools.chain(range(0x00,0x20), range(0x7f,0xa1))))
+control_chars_re = re.compile('[%s]' % re.escape(control_chars))
 
 arg_parser = argparse.ArgumentParser(
     prog='Govee LAN Scene Command Generator',
@@ -95,12 +99,16 @@ for scene in scenes:
     scene_code_subcommand += calculate_checksum(scene_code_subcommand)
     subcommands.append(base64.b64encode(scene_code_subcommand).decode('ascii'))
 
-    # Assemble the final pretty dictionary
-    new_scenes[scene["sceneName"]] = {
+    # Strip Unicode control characters just in case
+    scene_name = control_chars_re.sub('', scene["sceneName"])
+
+    # Assemble the final dictionary
+    new_scenes[scene_name] = {
         'scene_code': scene_code,
         'command': subcommands,
     }
 
+# Check for anomalies
 converted_scene_count = len(new_scenes)
 print(f"Converted {converted_scene_count}/{extracted_scene_count} scenes.")
 if converted_scene_count != extracted_scene_count:

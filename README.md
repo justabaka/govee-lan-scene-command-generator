@@ -60,6 +60,5 @@ s.close()
 
 ## References
 * https://github.com/egold555/Govee-Reverse-Engineering/issues/11
-* https://github.com/AlgoClaw/Govee/blob/main/decoded/explanation
-* https://github.com/AlgoClaw/Govee/blob/main/decoded/govee_decoded.sh
+* https://github.com/AlgoClaw/Govee/blob/main/decoded/v1.2/explanation_v1.2.md
 * https://disbar.red/note/Govee%20Decoded%202

@@ -1,0 +1,133 @@
+[
+	{
+		"models": [
+			"null",
+			"H610A",
+			"H61F2",
+			"H61F8"
+		],
+		"hex_multi_prefix": "a3",
+		"on_command": false,
+		"type": []
+	},
+	{
+		"models": [
+			"H6079"
+		],
+		"hex_multi_prefix": "a3",
+		"on_command": true,
+		"type": []
+	},
+	{
+		"models": [
+			"H6039",
+			"H6072",
+			"H6167",
+			"H6172",
+			"H619C",
+			"H61A2",
+			"H61A8",
+			"H7039",
+			"H7075",
+			"H70C2",
+			"H805A"
+			],
+		"hex_multi_prefix": "a3",
+		"on_command": false,
+		"type": [
+					{
+				"type_entry": 0,
+				"hex_prefix_remove": "",
+				"hex_prefix_add": "02",
+				"normal_command_suffix": ""
+			}
+		]
+	},
+	{
+		"models": [
+			"H6066"
+			],
+		"hex_multi_prefix": "a3",
+		"on_command": false,
+		"type": [
+			{
+				"type_entry": 0,
+				"hex_prefix_remove": "1200000000",
+				"hex_prefix_add": "04",
+				"normal_command_suffix": ""
+			},
+			{
+				"type_entry": 1,
+				"hex_prefix_remove": "1d",
+				"hex_prefix_add": "",
+				"normal_command_suffix": ""
+			}
+		]
+	},
+	{
+		"models": [
+			"H6022"
+			],
+		"hex_multi_prefix": "a3",
+		"on_command": false,
+		"type": [
+			{
+				"type_entry": 0,
+				"hex_prefix_remove": "41",
+				"hex_prefix_add": "585a",
+				"normal_command_suffix": ""
+			},
+			{
+				"type_entry": 1,
+				"hex_prefix_remove": "00",
+				"hex_prefix_add": "04",
+				"normal_command_suffix": ""
+			}
+		]
+	},
+	{
+		"models": [
+			"H6092"
+			],
+		"hex_multi_prefix": "a3",
+		"on_command": true,
+		"type": [
+			{
+				"type_entry": 0,
+				"hex_prefix_remove": "21",
+				"hex_prefix_add": "560b",
+				"normal_command_suffix": ""
+			}
+		]
+	},
+	{
+		"models": [
+			"H6065"
+			],
+		"hex_multi_prefix": "a3",
+		"on_command": false,
+		"type": [
+			{
+				"type_entry": 0,
+				"hex_prefix_remove": "12000c000f",
+				"hex_prefix_add": "04",
+				"normal_command_suffix": "0247"
+			},
+			{
+				"type_entry": 1,
+				"hex_prefix_remove": "1200000000",
+				"hex_prefix_add": "04",
+				"normal_command_suffix": "0047"
+			}
+		]
+	},
+
+	{
+		"models": [
+			"H70C4"
+			],
+		"hex_multi_prefix": "a4",
+		"on_command": false,
+		"type": []
+	}
+]

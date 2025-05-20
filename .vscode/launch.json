@@ -1,0 +1,23 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Generate Lan Commands",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "generate.py",
+            "console": "integratedTerminal",
+            "justMyCode": false,
+            "args": [
+                "--sku", "H61F2",
+                "--appversion", "6.6.30",
+                "--cache",
+                "--load", "govee_H61F2_api_data.json"
+            ],
+            "env": {}
+        },
+    ]
+}

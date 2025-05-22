@@ -7,7 +7,7 @@ Calls the Govee API, retrieves the available scenes and converts them into usabl
 ## Installation
 Clone the repository (or download the script + txt files manually) and install project requirements:
 * `git clone https://github.com/justabaka/govee-lan-scene-command-generator.git`
-* `pip install -r requirements.txt`
+* `pip install -r requirements.txt` - it is better to use [virtual environments](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#create-and-use-virtual-environments) or tools like [uv](https://github.com/astral-sh/uv), [Poetry](https://github.com/python-poetry/poetry), [Pipenv](https://github.com/pypa/pipenv) or [pipx](https://github.com/pypa/pipx).
 
 ## Usage
 ```shell
@@ -40,6 +40,8 @@ curl --location 'https://app2.govee.com/bff-app/v1/exec-plat/home' --header 'Con
 ## Example
 You may use any Govee LAN API command as a template, just make sure you set `"cmd": "ptReal"`.
 ```python
+#!/usr/bin/env python3
+
 import json
 import socket
 
@@ -59,6 +61,7 @@ s.close()
 ```
 
 ## References
-* https://github.com/egold555/Govee-Reverse-Engineering/issues/11
+* https://blog.coding.kiwi/reverse-engineering-govee-smart-lights/
 * https://github.com/AlgoClaw/Govee/blob/main/decoded/v1.2/explanation_v1.2.md
+* https://github.com/egold555/Govee-Reverse-Engineering/issues/11
 * https://disbar.red/note/Govee%20Decoded%202
